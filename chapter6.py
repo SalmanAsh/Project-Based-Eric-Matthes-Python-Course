@@ -61,3 +61,24 @@ print(joe['age'])
 print(joe['city'])
 
 # looping through all key-value pair
+user_0 = {'username': 'salman.ashraf2513', 'first': 'salman', 'last': 'ashraf'}
+for key, value in user_0.items():
+    print(f"\nkey: {key}")
+    print(f"\nvalue: {value}")
+
+favorite_languages = {
+    'salman': 'python',
+    'joe': 'english',
+    'ali': 'java',
+    'abdullah': 'php'
+}
+for name, language in favorite_languages.items():
+    print(f"{name.title()}'s favourite language is {language.title()}")
+
+# looping through all the keys
+favorite_languages = {
+    'salman': 'python',
+    'joe': 'english',
+    'ali': 'java',
+    'abdullah': 'php'
+}
