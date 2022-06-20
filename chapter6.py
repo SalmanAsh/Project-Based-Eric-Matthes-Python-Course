@@ -138,3 +138,26 @@ favorite_languages = {
 print("languages mentioned:")
 for language in set(favorite_languages.values()):
     print(language.title())
+
+# ex 6-4
+programming_words = {
+    'get': 'assigns a default value',
+    'sorted': 'tamporary sort the list',
+    'sort': 'permanently sort the list',
+    'set': 'finds uniques values only',
+    'if': 'condition test'
+}
+for word, meaning in programming_words.items():
+    print(f"key word {word} means {meaning}")
+
+rivers = {'po': 'italy', 'thames': 'uk', 'nile': 'egypt'}
+for river, country in rivers.items():
+    print(f"The {river.title()} runs through {country.title()}.")
+
+rivers = {'po': 'italy', 'thames': 'uk', 'nile': 'egypt'}
+print(rivers.keys())
+print(rivers.values())
+for river in rivers.keys():
+    print(river)
+for country in rivers.values():
+    print(country)
