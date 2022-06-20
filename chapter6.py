@@ -82,3 +82,59 @@ favorite_languages = {
     'ali': 'java',
     'abdullah': 'php'
 }
+for name in favorite_languages.keys():
+    print(name.title())
+
+favorite_languages = {
+    'salman': 'python',
+    'joe': 'english',
+    'ali': 'java',
+    'abdullah': 'php'
+}
+friends = ['joe', 'ali']
+for name in favorite_languages.keys():
+    print(f"Hi {name.title()}")
+    if name in friends:
+        print(
+            f"{name.title()}, I see you like {favorite_languages[name].title()}")
+
+favorite_languages = {
+    'salman': 'python',
+    'joe': 'english',
+    'ali': 'java',
+    'abdullah': 'php'
+}
+if 'sikandar' not in favorite_languages.keys():
+    print('sikandar did not take the poll')
+
+# looping in a particular order
+favorite_languages = {
+    'salman': 'python',
+    'joe': 'english',
+    'ali': 'java',
+    'abdullah': 'php'
+}
+for name in sorted(favorite_languages.keys()):
+    print(f"{name.title()}, thank you for taking the poll")
+
+# looping through the values
+favorite_languages = {
+    'salman': 'python',
+    'joe': 'english',
+    'ali': 'java',
+    'abdullah': 'php'
+}
+print("languages mentioned:")
+for language in favorite_languages.values():
+    print(language.title())
+
+# using set() to avoid repetitions
+favorite_languages = {
+    'salman': 'python',
+    'joe': 'english',
+    'ali': 'java',
+    'abdullah': 'python'
+}
+print("languages mentioned:")
+for language in set(favorite_languages.values()):
+    print(language.title())
