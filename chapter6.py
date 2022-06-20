@@ -53,3 +53,11 @@ alien_0 = {'color': 'green', 'speed': 'slow'}
 print(alien_0.get('points', 'no points assigned'))
 
 # ex 6-1
+joe = {'first_name': 'joe', 'last_name': 'hayes',
+       'age': 19, 'city': 'manchester'}
+print(joe['first_name'])
+print(joe['last_name'])
+print(joe['age'])
+print(joe['city'])
+
+# looping through all key-value pair
