@@ -50,4 +50,6 @@ print(f"joe's favourite language is {favorite_languages['joe'].title()}")
 
 # using get()
 alien_0 = {'color': 'green', 'speed': 'slow'}
-print(alien_0['points'])
+print(alien_0.get('points', 'no points assigned'))
+
+# ex 6-1
