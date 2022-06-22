@@ -163,3 +163,51 @@ for country in rivers.values():
     print(country)
 
 # nesting
+# list of dictionraries
+alien_0 = {'color': 'green', 'points': '5'}
+alien_1 = {'color': 'yelloe', 'points': '10'}
+alien_2 = {'color': 'red', 'points': '15'}
+aliens = [alien_0, alien_1, alien_2]
+print(aliens)
+
+alien_0 = {'color': 'green', 'points': '5'}
+alien_1 = {'color': 'yelloe', 'points': '10'}
+alien_2 = {'color': 'red', 'points': '15'}
+aliens = [alien_0, alien_1, alien_2]
+for alien in aliens:
+    print(alien)
+
+aliens = []
+for alien_number in range(30):
+    new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'}
+    aliens.append(new_alien)
+for alien in aliens[:5]:
+    print(alien)
+print("...")
+print(f"total number of aliens: {len(aliens)}")
+
+aliens = []
+for alien_number in range(30):
+    new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'}
+    aliens.append(new_alien)
+for alien in aliens[:3]:
+    if alien['color'] == 'green':
+        alien['color'] = 'yellow'
+        alien['points'] = 10
+        alien['speed'] = 'medium'
+for alien in aliens[:5]:
+    print(alien)
+    print("...")
+
+# a list in a dictionary
+pizza = {'crust': 'thick',
+         'toppings': ['mushroom', 'extra cheese']
+         }
+print(f"You ordered a {pizza['crust']} crust pizza with {pizza['toppings']}")
+
+pizza = {'crust': 'thick',
+         'toppings': ['mushroom', 'extra cheese']
+         }
+print(f"\nYou ordered a {pizza['crust']} crust pizza with following toppings:")
+for topping in pizza['toppings']:
+    print(f"\t{topping}")
