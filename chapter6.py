@@ -211,3 +211,102 @@ pizza = {'crust': 'thick',
 print(f"\nYou ordered a {pizza['crust']} crust pizza with following toppings:")
 for topping in pizza['toppings']:
     print(f"\t{topping}")
+
+favorite_languages = {
+    'salman': ['python', 'PHP'],
+    'joe': ['english'],
+    'ali': ['java', 'haskell'],
+    'abdullah': ['python', 'java']
+}
+for name, languages in favorite_languages.items():
+    print(f"{name.title()}'s favourite language is:")
+    for language in languages:
+        print(language)
+
+# dictionary in a dictionary
+users = {
+    'joeh': {
+        'name': 'joseph',
+        'last': 'hayes',
+        'location': 'didsbury'
+    },
+    'alim': {
+        'name': 'ali',
+        'last': 'mohammed',
+        'location': 'gorton'
+    },
+    'salmana': {
+        'name': 'salman',
+        'last': 'ashraf',
+        'location': 'rusholme'
+    }
+}
+for user, users_info in users.items():
+    print(f"\nUsername: {user}")
+    for one, two in users_info.items():
+        print(f"Full Name: {two[0]}{two[1]}")
+        print(f"Location: {two[2]}")
+
+
+users = {
+    'joeh': {
+        'name': 'joseph',
+        'last': 'hayes',
+        'location': 'didsbury'
+    },
+    'alim': {
+        'name': 'ali',
+        'last': 'mohammed',
+        'location': 'gorton'
+    },
+    'salmana': {
+        'name': 'salman',
+        'last': 'ashraf',
+        'location': 'rusholme'
+    }
+}
+for username, user_info in users.items():
+    print(f"\nUsername: {username}")
+    full_name = f"{user_info['name'].title()} {user_info['last'].title()}"
+    location = user_info['location'].title()
+    print(f"Full_name= {full_name}")
+    print(f"Location= {location}")
+
+# ex 6-7
+pet_1 = {'name': 'dog', 'color': 'black', 'age': 6}
+pet_2 = {'name': 'cat', 'color': 'white', 'age': 2}
+pet_3 = {'name': 'parrot', 'color': 'green', 'age': 1}
+pets = [pet_1, pet_2, pet_3]
+for pet in pets:
+    print(pet)
+
+Places = {
+    'salman': ['morocco', 'usa', 'saudi'],
+    'joe': ['pakistan', 'korea'],
+    'ali': ['usa']
+}
+for name, place_s in Places.items():
+    print(f"{name.title()}'s favourite places are:")
+    for place in place_s:
+        print(place)
+
+cities = {
+    'london': {
+        'country': 'uk',
+        'population': '36m',
+        'fact': 'shit city'
+    },
+    'dubai': {
+        'country': 'saudi',
+        'population': '15m',
+        'fact': 'tall city'
+    }
+}
+for city, city_info in cities.items():
+    print(f"\n-Here's some info about the city of {city.title()}:")
+    Country = f"\t-The city is in {city_info['country']}."
+    population = f"\t-It has population of {city_info['population']}."
+    fact = f"\t-It is a fact that the city is {city_info['fact']}."
+    print(Country)
+    print(population)
+    print(fact)
