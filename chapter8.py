@@ -272,3 +272,67 @@ while True:
         break
     music = make_album(a_name, a_title, song)
     print(music)
+
+# passing a list
+
+
+def greet_user(names):
+    """print a greeting message"""
+    for name in names:
+        msg = f"Hello, {name.title()}"
+        print(msg)
+
+
+usernames = ['salman', 'joe', 'ali']
+greet_user(usernames)
+
+# modifying the list in a funcion
+unprinted_designs = ['phone case', 'screw', 'pen']
+completed_models = []
+while unprinted_designs:
+    current_design = unprinted_designs.pop()
+    print(f"Printing model: {current_design}")
+    completed_models.append(current_design)
+print(f"\nThe following models are completed:")
+for completed_model in completed_models:
+    print(completed_model)
+
+
+def print_models(unprinted_designs, completed_models):
+    """
+    Simulate printing each design, ultil none left.
+    Move each design in completed_model once finished
+    """
+    while unprinted_designs:
+        current_design = unprinted_designs.pop()
+        print(f"Printing model: {current_design}")
+        completed_models.append(current_design)
+
+
+def show_completed_models(completed_models):
+    """Show printed printed models"""
+    print(f"\nThe following models are printed:")
+    for completed_model in completed_models:
+        print(completed_model)
+
+
+unprinted_designs = ['phone case', 'screw', 'pen']
+completed_models = []
+
+print_models(unprinted_designs, completed_models)
+show_completed_models(completed_models)
+
+# preventing a function from modifying the list
+print(unprinted_designs[:], completed_models)
+
+# ex 8-9
+messages = ['hi', 'hello', 'bye']
+
+
+def short_messages(greets):
+    """print a short message"""
+    for greet in greets:
+        print(greet)
+
+
+short_messages(messages)
