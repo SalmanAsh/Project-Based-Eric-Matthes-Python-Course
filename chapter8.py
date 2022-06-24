@@ -1,4 +1,7 @@
 # Functions
+import pizza
+
+
 def greet_user():
     """Display a simple greeting"""
     print("Hello")
@@ -427,3 +430,31 @@ def build_profile(first, last, **info):
 me = build_profile('salman', 'last', location='manchester',
                    field='cs', passion='cricket')
 print(me)
+
+# Storing function in modules
+# importing an entire module
+"""making a file pizza.py"""
+
+"""import pizza"""
+pizza.make_pizza(16, 'tuna')
+pizza.make_pizza(12, 'tuna', 'chicken', 'tomatos')
+
+# importing specific functions
+"""from pizza import make_pizza"""
+pizza.make_pizza(16, 'tuna')
+pizza.make_pizza(12, 'tuna', 'chicken', 'tomatos')
+
+# importing a function with a different name or alias
+"""from pizza import make_pizza as mp"""
+mp(16, 'tuna')
+mp(12, 'tuna', 'chicken', 'tomatos')
+
+# importing an entire module as an alias
+"""import pizza as p"""
+p.make_pizza(16, 'tuna')
+p.make_pizza(12, 'tuna', 'chicken', 'tomatos')
+
+# import all functions in a module
+""" from pizza import * """
+make_pizza(16, 'tuna')
+make_pizza(12, 'tuna', 'chicken', 'tomatos')
