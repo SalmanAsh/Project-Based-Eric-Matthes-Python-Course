@@ -336,3 +336,94 @@ def short_messages(greets):
 
 
 short_messages(messages)
+
+
+def send_messages(greets, sent_messages):
+    while greets:
+        greet = greets.pop()
+        print(f"message sent: {greet}")
+        sent_messages.append(greet)
+
+
+greets = ['hi', 'hello', 'bye']
+sent_messages = []
+
+send_messages(greets, sent_messages)
+print(sent_messages)
+
+
+def send_messages(greets, sent_messages):
+    while greets:
+        greet = greets.pop()
+        print(f"message sent: {greet}")
+        sent_messages.append(greet)
+
+
+greets = ['hi', 'hello', 'bye']
+sent_messages = []
+
+send_messages(greets[:], sent_messages)
+print(greets)
+print(sent_messages)
+
+# passing an arbitrary number of arguments
+
+
+def make_pizza(*toppings):
+    """print a list of toppings"""
+    for topping in toppings:
+        print(topping)
+
+
+make_pizza('papperoni')
+make_pizza('mushroom', 'tuna', 'extra cheese')
+
+# mixing positional and arbitrary argumants
+
+
+def make_pizza(size, *toppings):
+    """Give pizza size and toppings"""
+    print(f"\nMake a {size} inch pizza and with the following toppings:")
+    for topping in toppings:
+        print(f"- {topping}")
+
+
+make_pizza(16, 'tuna', 'chicken')
+
+# using arbitrary keyword arguments
+
+
+def build_profile(first, last, **userinfo):
+    """build a dictionary containig info about user"""
+    userinfo['first_name'] = first
+    userinfo['last_name'] = last
+    return userinfo
+
+
+user_profile = build_profile(
+    'salman', 'ashraf', location='manchester', field='cs')
+print(user_profile)
+
+# ex 8-12
+
+
+def sandwich(*items):
+    """Items in a sandwich"""
+    print(f"Make a sanwich with the following items:")
+    for item in items:
+        print(item.title())
+
+
+sandwich('tuna', 'egg', 'mayo')
+
+
+def build_profile(first, last, **info):
+    """about me"""
+    info['first_name'] = first
+    info['last_name'] = last
+    return info
+
+
+me = build_profile('salman', 'last', location='manchester',
+                   field='cs', passion='cricket')
+print(me)
