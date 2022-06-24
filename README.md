@@ -1,4 +1,4 @@
-# Sample Python Project
+# Python
 
 ## Table of Contents
 - [Getting started](#getting-started)
