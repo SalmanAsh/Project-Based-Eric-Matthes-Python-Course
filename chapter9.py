@@ -213,3 +213,109 @@ my_new_car.odometre_reading = 23
 my_new_car.read_odometre()
 
 # modifying an attibute value through a method
+
+
+class Car:
+    """A simple attempt to represent a car"""
+
+    def __init__(self, make, model, year):
+        """initialize attributes"""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometre_reading = 0
+
+    def get_descriptive_name(self):
+        """return a neatlt formatted descriptive name"""
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+
+    def read_odometre(self):
+        """print a statement showing car's mileage"""
+        print(f"The car has {self.odometre_reading} miles on it")
+
+    def update_odometre(self, mileage):
+        """Update the odometer"""
+        self.odometre_reading = mileage
+
+
+my_new_car = Car(make='open', model='corsa', year=2003)
+print(my_new_car.get_descriptive_name())
+
+my_new_car.update_odometre(23)
+my_new_car.read_odometre()
+
+
+class Car:
+    """A simple attempt to represent a car"""
+
+    def __init__(self, make, model, year):
+        """initialize attributes"""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometre_reading = 0
+
+    def get_descriptive_name(self):
+        """return a neatlt formatted descriptive name"""
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+
+    def read_odometre(self):
+        """print a statement showing car's mileage"""
+        print(f"The car has {self.odometre_reading} miles on it")
+
+    def update_odometre(self, mileage):
+        """Update the odometer"""
+        """Reject any request to roll back the odometer"""
+        if mileage >= self.odometre_reading:
+            self.odometre_reading = mileage
+        else:
+            print("Error")
+
+
+my_new_car = Car(make='open', model='corsa', year=2003)
+print(my_new_car.get_descriptive_name())
+
+my_new_car.update_odometre(23)
+my_new_car.read_odometre()
+
+my_old_car = Car(make='opel', model='corsa', year=2001)
+print(my_old_car.get_descriptive_name())
+my_old_car.update_odometre(100000)
+my_old_car.read_odometre()
+my_old_car.update_odometre(50)
+my_old_car.read_odometre()
+
+# incrementing an attributes value through a method
+
+
+class Car:
+    """A simple attempt to represent a car"""
+
+    def __init__(self, make, model, year):
+        """initialize attributes"""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometre_reading = 50
+
+    def get_descriptive_name(self):
+        """return a neatlt formatted descriptive name"""
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+
+    def read_odometre(self):
+        """print a statement showing car's mileage"""
+        print(f"The car has {self.odometre_reading} miles on it")
+
+    def increment_odometre(self, miles):
+        """Update the odometer"""
+        self.odometre_reading += miles
+
+
+my_new_car = Car(make='open', model='corsa', year=2003)
+print(my_new_car.get_descriptive_name())
+
+my_new_car.increment_odometre(50)
+my_new_car.read_odometre()
