@@ -127,15 +127,36 @@ class User:
         self.location = location
 
     def describe_user(self):
-        print(f"Name: {first_name} {last_name}")
-        print(f"Age: {age}")
-        print(f'location: {location}')
+        print(f"Name: {self.first} {self.last}")
+        print(f"Age: {self.age}")
+        print(f'location: {self.location}')
 
     def greet_user(self):
-        print(f"Hello, Mr {first_name}")
+        print(f"Hello, Mr {self.first}")
 
 
 customer_1 = User('salman', 'ashraf', '20', 'manchester')
+print(customer_1.age)
 
 
-#
+# the car class
+class Car:
+    """A simple attempt to represent a car"""
+
+    def __init__(self, make, model, year):
+        """initialize attributes"""
+        self.make = make
+        self.model = model
+        self.year = year
+
+    def get_descriptive_name(self):
+        """return a neatlt formatted descriptive name"""
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+
+
+my_new_car = Car('opel', model='corsa', year=2003)
+print(my_new_car.get_descriptive_name())
+
+
+# setting a default value for an attribute
