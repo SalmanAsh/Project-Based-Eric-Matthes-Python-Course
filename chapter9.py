@@ -319,3 +319,92 @@ print(my_new_car.get_descriptive_name())
 
 my_new_car.increment_odometre(50)
 my_new_car.read_odometre()
+
+
+# inheritance
+
+class Car:
+    """A simple attempt to represent a car"""
+
+    def __init__(self, make, model, year):
+        """initialize attributes"""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometre_reading = 0
+
+    def get_descriptive_name(self):
+        """return a neatlt formatted descriptive name"""
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+
+    def read_odometre(self):
+        """print a statement showing car's mileage"""
+        print(f"The car has {self.odometre_reading} miles on it")
+
+    def update_odometre(self, mileage):
+        """Update the odometer"""
+        """Reject any request to roll back the odometer"""
+        if mileage >= self.odometre_reading:
+            self.odometre_reading = mileage
+        else:
+            print("Error")
+
+
+class ElectricCar(Car):
+    """Represent aspects of an electric car"""
+
+    def __init__(self, make, model, year):
+        """initialize attributes"""
+        super().__init__(make, model, year)
+
+
+my_tesla = ElectricCar('tesla', 'model s', year=2019)
+print(my_tesla.get_descriptive_name())
+
+# defining addional attributes and methods for child class
+
+
+class Car:
+    """A simple attempt to represent a car"""
+
+    def __init__(self, make, model, year):
+        """initialize attributes"""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometre_reading = 0
+
+    def get_descriptive_name(self):
+        """return a neatlt formatted descriptive name"""
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+
+    def read_odometre(self):
+        """print a statement showing car's mileage"""
+        print(f"The car has {self.odometre_reading} miles on it")
+
+    def update_odometre(self, mileage):
+        """Update the odometer"""
+        """Reject any request to roll back the odometer"""
+        if mileage >= self.odometre_reading:
+            self.odometre_reading = mileage
+        else:
+            print("Error")
+
+
+class ElectricCar(Car):
+    """Represent aspects of an electric car"""
+
+    def __init__(self, make, model, year):
+        super().__init__(make, model, year)
+        self.battery_size = 75
+
+    def describe_battery(self):
+        """print battery"""
+        print(f"This car has a {self.battery_size}-kWh battery")
+
+
+my_tesla = ElectricCar('tesla', 'model s', year=2019)
+print(my_tesla.get_descriptive_name())
+my_tesla.describe_battery()
