@@ -1,4 +1,8 @@
 # the __init() method
+from random import choice
+from random import randint
+
+
 class Dog:
     """A simple attempt to model a dog"""
 
@@ -649,3 +653,63 @@ class ElectricCar(Car):
 
 
 # Importing a single class
+"""from car import Car"""
+
+my_new_car = Car('opel', model='insigna', year=2010)
+print(my_new_car.get_descriptive_name())
+
+my_new_car.odometre_reading = 190000
+my_new_car.read_odometre()
+
+# storing multiple classes in a module
+
+"""from chapter9 import ElectricCar"""
+
+my_new_car = ElectricCar('opel', model='insigna', year=2010)
+print(my_new_car.get_descriptive_name())
+
+# importing multiple class from a module
+"""from chapter9 import Car, ElectricCar"""
+
+my_new_car = ElectricCar('opel', model='insigna', year=2010)
+print(my_new_car.get_descriptive_name())
+
+# importing an emtire module
+"""import car"""
+
+my_new_car = ElectricCar('opel', model='insigna', year=2010)
+print(my_new_car.get_descriptive_name())
+
+# importing all classes
+"""from car import *"""
+
+my_new_car = ElectricCar('opel', model='insigna', year=2010)
+print(my_new_car.get_descriptive_name())
+
+# importing a module into a module
+"""
+from chapter9 import Car
+from chapter9 import ElectricCar
+"""
+
+my_new_car = ElectricCar('opel', model='insigna', year=2010)
+print(my_new_car.get_descriptive_name())
+
+# using alies
+"""
+from chapter9 import Car as MyCar
+from chapter9 import ElectricCar as MyElectricCar
+"""
+
+my_new_car = ElectricCar('opel', model='insigna', year=2010)
+print(my_new_car.get_descriptive_name())
+
+
+# python standard classes
+"""random numbers between two integers"""
+randint(1, 7)
+
+"""choose a random element"""
+players = ['salman', 'joe', 'ali']
+first = choice(players)
+print(first)
