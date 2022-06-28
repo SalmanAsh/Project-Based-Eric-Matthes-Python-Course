@@ -14,3 +14,5 @@ with open('pi_digits.txt') as file_object:
 with open('text_files/pi_digits.txt') as file_object:
     content = file_object.read()
     print(content)
+
+# reading line by line
