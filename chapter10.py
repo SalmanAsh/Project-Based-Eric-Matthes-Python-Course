@@ -16,3 +16,13 @@ with open('text_files/pi_digits.txt') as file_object:
     print(content)
 
 # reading line by line
+
+with open('pi_digits.txt') as file_object:
+    for line in file_object:
+        print(line)
+
+with open('pi_digits.txt') as file_object:
+    for line in file_object:
+        print(line.rstrip())
+
+# making a list of line from a file
