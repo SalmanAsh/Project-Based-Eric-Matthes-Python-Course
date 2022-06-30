@@ -57,3 +57,26 @@ print(pi_string)
 print(len(pi_string))
 
 # large files
+with open('Resources/pi_million_digits.txt') as file_object:
+    lines = file_object.readlines()
+pi_string = ''
+for line in lines:
+    pi_string += line.strip()
+
+print(pi_string[:50])
+print(len(pi_string))
+
+# is your birthday in pi
+with open('Resources/pi_million_digits.txt') as file_object:
+    lines = file_object.readlines()
+pi_string = ''
+for line in lines:
+    pi_string += line.strip()
+
+"""
+birthday=input("Entre your birthday in form ddmmyy")
+if birthday in pi_string:
+    print('yes')
+else:
+    print('no')
+"""
