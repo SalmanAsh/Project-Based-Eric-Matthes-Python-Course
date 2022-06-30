@@ -26,3 +26,34 @@ with open('pi_digits.txt') as file_object:
         print(line.rstrip())
 
 # making a list of line from a file
+with open('pi_digits.txt') as file_object:
+    lines = file_object.readlines()
+
+for line in lines:
+    print(line.rstrip())
+
+# working with files content
+file_content = 'pi_digits.txt'
+with open(file_content) as file_object:
+    lines = file_object.readlines()
+
+pi_string = ''
+for line in lines:
+    pi_string += line.rstrip()
+
+print(pi_string)
+print(len(pi_string))
+
+
+file_content = 'pi_digits.txt'
+with open(file_content) as file_object:
+    lines = file_object.readlines()
+
+pi_string = ''
+for line in lines:
+    pi_string += line.strip()
+
+print(pi_string)
+print(len(pi_string))
+
+# large files
