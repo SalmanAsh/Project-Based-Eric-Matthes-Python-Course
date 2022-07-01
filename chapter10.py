@@ -80,3 +80,28 @@ if birthday in pi_string:
 else:
     print('no')
 """
+# ex 10-1
+message = 'I like pizza'
+message.replace('pasta', 'pizza')
+print(message)
+
+# writing to an empty file
+file_name = 'Resources\programming.txt'
+with open(file_name, 'w') as file_object:
+    file_object.write('I love programming')
+
+file_name = 'Resources\programming.txt'
+with open(file_name, 'w') as file_object:
+    file_object.write('I love programming too')
+
+# writting multiple lines
+file_name = 'Resources\programming.txt'
+with open(file_name, 'w') as file_object:
+    file_object.write('I love programming too. \n')
+    file_object.write('I love python \n')
+
+# appending to a file
+file_name = 'Resources\programming.txt'
+with open(file_name, 'a') as file_object:
+    file_object.write('I like maths too, ')
+    file_object.write('and physics too')
