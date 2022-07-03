@@ -1,7 +1,8 @@
-#Files and Exceptions
+# Files and Exceptions
 
 # reading an entire file
 
+import json
 with open('pi_digits.txt') as file_object:
     content = file_object.read()
     print(content)
@@ -117,7 +118,7 @@ except ZeroDivisionError:
     print("You cannot divide by zero")
 
 # using exceptions to prevent crashes
-"""
+
 print('Give me two numbers, I will divide them')
 print('Enter q to exit')
 while True:
@@ -129,7 +130,7 @@ while True:
         break
     answer = int(first_number)/int(second_number)
     print(answer)
-    
+
 print('Give me two numbers, I will divide them')
 print('Enter q to exit')
 while True:
@@ -145,11 +146,9 @@ while True:
     except ZeroDivisionError:
         print('You cannot divide by zero')
 
-"""
-
 # the else block
 
-"""
+
 print('Give me two numbers, I will divide them')
 print('Enter q to exit')
 while True:
@@ -165,14 +164,13 @@ while True:
         print('You cannot divide by zero')
     else:
         print(answer)
-"""
 
 # FileNotFoundError exception
-"""
-filename='alice.txt'
+
+filename = 'alice.txt'
 with open(filename, encoding='utf-8') as f:
-    content=f.read()
-"""
+    content = f.read()
+
 filename = 'alice.txt'
 try:
     with open(filename, encoding='utf-8') as f:
@@ -239,7 +237,7 @@ for filename in filenames:
     count_words(filename)
 
 # ex 10-6
-"""
+
 print("Addition of two numbers")
 print("enter q to exit")
 
@@ -256,7 +254,7 @@ while True:
         print("Please enter a numerical value")
     else:
         print(Total)
-"""
+
 
 filename = 'Resources/dog.txt'
 try:
@@ -279,3 +277,120 @@ else:
 
 file_name = "Resources/alice.txt"
 file_name.lower().count('a')
+
+# storing data
+# json.dump() and json.load()
+numbers = [2, 3, 5, 7, 11, 13]
+filename = 'Resources\storing.json'
+with open(filename, 'w') as f:
+    json.dump(numbers, f)
+
+filename = 'Resources\storing.json'
+with open(filename) as f:
+    numbers = json.load(f)
+print(numbers)
+
+# saving and using user data
+
+username = input("Usernane?")
+filename = 'Resources/userdata.json'
+with open(filename, 'w') as f:
+    json.dump(username, f)
+    print(f"{username} has been stored")
+
+filename = 'Resources/userdata.json'
+with open(filename) as f:
+    username = json.load(f)
+    print(username)
+
+""" load previously stored username"""
+"""otherwise, store a new one"""
+filename = 'Resources/username.json'
+try:
+    with open(filename) as f:
+        username = json.load(f)
+except FileNotFoundError:
+    username = input("Enter Username")
+    with open(filename, 'w') as f:
+        json.dump(username, f)
+        print("Username is now saved")
+else:
+    print(username)
+
+# refactoring
+
+
+def greet_user():
+    filename = 'Resources/username.json'
+    try:
+        with open(filename) as f:
+            username = json.load(f)
+    except FileNotFoundError:
+        username = input("username")
+        with open(filename, 'w') as f:
+            json.dump(username, f)
+            print("Username is now saved")
+    else:
+        print(username)
+
+
+greet_user()
+
+
+def get_stored_username():
+    """Get stored username if available"""
+    filename = 'Resources/username.json'
+    try:
+        with open(filename) as f:
+            Username = json.load(f)
+    except FileExistsError:
+        return None
+    else:
+        return Username
+
+
+def greet_user():
+    """Greet the user"""
+    Username = get_stored_username()
+    if Username:
+        print(f"Welcome back, {Username}")
+    else:
+        Username = input("Username")
+        with open(filename, 'w') as f:
+            json.dump(Username, f)
+            print("Username is now saved")
+
+
+greet_user()
+
+
+def get_stored_username():
+    """Get stored username if available"""
+    filename = 'Resources/username.json'
+    try:
+        with open(filename) as f:
+            Username = json.load(f)
+    except FileExistsError:
+        return None
+    else:
+        return Username
+
+
+def get_new_username():
+    """Promp for a new username"""
+    Username = input("Username")
+    with open(filename, 'w') as f:
+        json.dump(Username, f)
+
+
+def greet_user():
+    """Greet the user"""
+    Username = get_stored_username()
+    if Username:
+        print(f"Welcome back, {Username}")
+    else:
+        get_new_username()
+        print("Username is now saved")
+
+
+greet_user()
