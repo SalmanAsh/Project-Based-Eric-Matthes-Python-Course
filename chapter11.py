@@ -1,6 +1,9 @@
 # Testing your code
 # testing a function
 
+from survey import AnonymousSurvey
+
+
 def get_formatted_name(first, last):
     """Generate a full name"""
     full_name = f"{first} {last}"
@@ -110,3 +113,44 @@ class AnonymousSurvey:
         print("Survey Results:")
         for responce in responces:
             print(f" -{responce}")
+
+
+"""Define a question, and make a survey"""
+question = "What language did you first learn to speak?"
+my_survey = AnonymousSurvey(question)
+
+"""show the question and store responces to the question"""
+my_survey.show_question()
+print("Enter q to quit")
+while True:
+    responce = input("Language: ")
+    if responce == 'q':
+        break
+    my_survey.store_responce(responce)
+
+"""Show results"""
+print("Thank you for participating")
+my_survey.show_result()
+
+
+# testing the class
+
+"""
+import unittest
+from survey import AnonymousSurvey
+"""
+
+
+class TestAnonymousSurvey(unittest.TestCase):
+    """Test for the class"""
+
+    def test_store_single_responce(self):
+        """Test that a single responce in stored"""
+        question = "What language did you first learn to speak?"""
+        my_survey = AnonymousSurvey(question)
+        my_survey.store_responce('english')
+        self.assertIn('english', my_survey.responces)
+
+
+if __name__ == '__main__':
+    unittest.main()

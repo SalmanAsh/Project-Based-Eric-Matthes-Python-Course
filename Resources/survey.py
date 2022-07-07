@@ -10,7 +10,7 @@ class AnonymousSurvey:
         """Show survey question"""
         print(self.question)
 
-    def store_responce(self):
+    def store_responce(self, responce):
         """store a single responce"""
         self.responces.append(new_responce)
 
@@ -19,8 +19,3 @@ class AnonymousSurvey:
         print("Survey Results:")
         for responce in responces:
             print(f" -{responce}")
-
-
-new_responce = 'Good'
-test1 = AnonymousSurvey('how are you?')
-test1.show_result()
